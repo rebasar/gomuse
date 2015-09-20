@@ -1,6 +1,6 @@
-# YMuse API Client for Go
+# Go client for [ymuse.com](https://ymuse.com) API
 
-This is an experimental YMuse API client for Go. Hopefully, there will
+This is an experimental [ymuse.com](https://ymuse.com) API client for Go. Hopefully, there will
 be some documentation some day. Until then, you can enjoy it by:
 
 ```go
