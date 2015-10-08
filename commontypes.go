@@ -9,6 +9,8 @@ type ContentType string
 type ResourceImage map[ImageSize]string
 type ID string
 
+func (self ID) String() string { return string(self) }
+
 const (
 	Original  ImageSize = "original"
 	Thumbnail ImageSize = "thumb"
