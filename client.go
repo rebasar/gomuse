@@ -62,6 +62,14 @@ func (self *Client) GetArtist(artistId ID) (Artist, error) {
 	return result, e
 }
 
+func (self *Client) GetArtistRelations(artistId ID) ([]ArtistRef, error) {
+	result := []ArtistRef{}
+	err := APIError{}
+	response, errcode := self.session.Get(getArtistRelationsURL(artistId).String(), nil, &result, &err)
+	e := handleErrors(response, errcode)
+	return result, e
+}
+
 func (self *Client) GetArtistTrackContributions(artistId ID) ([]TrackContribution, error) {
 	result := []TrackContribution{}
 	err := APIError{}

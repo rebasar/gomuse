@@ -16,6 +16,7 @@ const (
 	albumURL                    string = "albums/%s"
 	trackURL                    string = "tracks/%s"
 	oauthTokenURL               string = "https://ymuse.com/oauth/token"
+	artistRelationsURL          string = "artists/%s/related"
 )
 
 func getFeaturedContentURL() *url.URL {
@@ -47,6 +48,12 @@ func getArtistURL(id ID) *url.URL {
 
 func getArtistTrackContributionsURL(id ID) *url.URL {
 	formatted := fmt.Sprintf(artistTrackContributionsURL, id)
+	result, _ := url.Parse(apiBase + formatted)
+	return result
+}
+
+func getArtistRelationsURL(id ID) *url.URL {
+	formatted := fmt.Sprintf(artistRelationsURL, id)
 	result, _ := url.Parse(apiBase + formatted)
 	return result
 }
